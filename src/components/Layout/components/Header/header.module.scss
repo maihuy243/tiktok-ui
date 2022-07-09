@@ -16,5 +16,53 @@
   .inner {
     height: 100%;
     width: var(--default-layout-header-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+    }
+    .search {
+      position: relative;
+      padding-left: 16px;
+      display: flex;
+      width: 361px;
+      height: 46px;
+      background-color: rgba(22, 24, 35, 0.06);
+      border-radius: var(--search-border-radius);
+      &::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        top: 9px;
+        right: 52px;
+        background-color: red;
+
+        // background-color: rgba(22, 24, 35, 0.12);
+      }
+      input {
+        flex: 1;
+        height: 100%;
+        font-weight: 400;
+        color: var(--black);
+        font-size: inherit;
+        background-color: transparent;
+      }
+      .clear {
+        cursor: pointer;
+      }
+      .loading {
+      }
+      .search-btn {
+        width: 52px;
+        height: 100%;
+        border-top-right-radius: var(--search-border-radius);
+        border-bottom-right-radius: var(--search-border-radius);
+        cursor: pointer;
+        font-size: 1.8rem;
+        &:hover {
+          background: rgba(22, 24, 35, 0.03);
+        }
+      }
+    }
   }
 }
