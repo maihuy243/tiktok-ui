@@ -1,13 +1,25 @@
-import { images } from '~/assets/images';
-
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-
+import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
+
 import styles from './header.module.scss';
+import { images } from '~/assets/images';
+import { Popup as PopupWrapper } from '~/components/Popup';
+import AccountItem from '../../../AccountItem/AccountItem';
+import Button from '~/components/Button/button';
+
 const cx = classNames.bind(styles);
 
 function Header() {
+  const [searchResult, setSearchResult] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSearchResult([]);
+    }, 0);
+  }, []);
   return (
     <>
       <header className={cx('wrapper')}>
@@ -16,22 +28,39 @@ function Header() {
             <img src={images.logo} alt="tiktok"></img>
           </div>
           {/* End logo */}
+          <Tippy
+            interactive={true}
+            visible={searchResult.length > 0}
+            render={(attribute) => (
+              <div className={cx('search-result')} tabIndex="-1" {...attribute}>
+                <PopupWrapper>
+                  <h4 className={cx('search-account')}>Account</h4>
+                  <AccountItem />
+                  <AccountItem />
+                  <AccountItem />
+                  <AccountItem />
+                  <AccountItem />
+                </PopupWrapper>
+              </div>
+            )}
+          >
+            <div className={cx('search')}>
+              {/* spellCheck : check chính tả của ô input  */}
+              <input placeholder="Search account and video ..." spellCheck={false}></input>
+              <button className={cx('clear')}>
+                <FontAwesomeIcon icon={faCircleXmark} />
+              </button>
+              <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
-          <div className={cx('search')}>
-            {/* spellCheck : check chính tả của ô input  */}
-            <input placeholder="Search account and video ..." spellCheck={false}></input>
-            <button className={cx('clear')}>
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-            <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-            <button className={cx('search-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </div>
+              <button className={cx('search-btn')}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </button>
+            </div>
+          </Tippy>
           {/* End Search */}
 
           <div className={cx('actions')}>
-            <p>user</p>
+            <Button />
           </div>
         </div>
       </header>
