@@ -5,7 +5,8 @@
   --default-layout-header-height: 60px;
   --default-layout-header-width: 1150px;
   --search-border-radius: 92px;
-  --primary: rgb(254, 44, 85);
+  --danger: rgb(254, 44, 85);
+  --white: #fff;
 }
 
 * {
@@ -30,5 +31,4 @@ input,
 }
 a {
   text-decoration: none;
-  color: var(--text-color);
 }

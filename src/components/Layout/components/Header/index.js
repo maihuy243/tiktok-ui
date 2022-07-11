@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleXmark,
+  faSpinner,
+  faMagnifyingGlass,
+  faPlus,
+  faEllipsisVertical,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
@@ -38,8 +44,6 @@ function Header() {
                   <AccountItem />
                   <AccountItem />
                   <AccountItem />
-                  <AccountItem />
-                  <AccountItem />
                 </PopupWrapper>
               </div>
             )}
@@ -60,7 +64,25 @@ function Header() {
           {/* End Search */}
 
           <div className={cx('actions')}>
-            <Button />
+            <Button text>
+              <FontAwesomeIcon className={cx('iconPlus')} icon={faPlus} />
+              Tải lên
+            </Button>
+            <Button danger disabled>
+              Đăng nhập
+            </Button>
+            {/* <Tippy
+              interactive={true}
+              render={(attribute) => (
+                <div className={cx('option-header')} tabIndex="-1" {...attribute}>
+                  <PopupWrapper>
+                    <h4 className={cx('search-account')}>Account</h4>
+                  </PopupWrapper>
+                </div>
+              )}
+            >
+              <FontAwesomeIcon className={cx('iconPlus')} icon={faEllipsisVertical} />
+            </Tippy> */}
           </div>
         </div>
       </header>
