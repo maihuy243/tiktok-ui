@@ -6,6 +6,9 @@ import {
   faMagnifyingGlass,
   faPlus,
   faEllipsisVertical,
+  faEarthAsia,
+  faCircleQuestion,
+  faKeyboard,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
@@ -15,8 +18,26 @@ import { images } from '~/assets/images';
 import { Popup as PopupWrapper } from '~/components/Popup';
 import AccountItem from '../../../AccountItem/AccountItem';
 import Button from '~/components/Button/button';
-
+import Menu from '~/components/MenuItems/menuitem';
 const cx = classNames.bind(styles);
+
+//arr item menu
+
+const MENU_ITEM = [
+  {
+    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    title: 'Tiếng Việt',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    title: 'Phản hồi và trợ giúp',
+    to: '/',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faKeyboard} />,
+    title: 'Phím tắt trên màn hình',
+  },
+];
 
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
@@ -67,16 +88,11 @@ function Header() {
               Tải lên
             </Button>
             <Button danger>Đăng nhập</Button>
-            <Tippy
-              interactive={true}
-              render={(attribute) => (
-                <div className={cx('option-header')} tabIndex="-1" {...attribute}>
-                  Tools
-                </div>
-              )}
-            >
-              <FontAwesomeIcon className={cx('iconPlus')} icon={faEllipsisVertical} />
-            </Tippy>
+            <Menu items={MENU_ITEM}>
+              <div className={cx('icon-header')}>
+                <FontAwesomeIcon icon={faEllipsisVertical} />
+              </div>
+            </Menu>
           </div>
         </div>
       </header>
