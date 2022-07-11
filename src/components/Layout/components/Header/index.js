@@ -55,7 +55,6 @@ function Header() {
                 <FontAwesomeIcon icon={faCircleXmark} />
               </button>
               <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-
               <button className={cx('search-btn')}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </button>
@@ -64,25 +63,20 @@ function Header() {
           {/* End Search */}
 
           <div className={cx('actions')}>
-            <Button text>
-              <FontAwesomeIcon className={cx('iconPlus')} icon={faPlus} />
+            <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
               Tải lên
             </Button>
-            <Button danger disabled>
-              Đăng nhập
-            </Button>
-            {/* <Tippy
+            <Button danger>Đăng nhập</Button>
+            <Tippy
               interactive={true}
               render={(attribute) => (
                 <div className={cx('option-header')} tabIndex="-1" {...attribute}>
-                  <PopupWrapper>
-                    <h4 className={cx('search-account')}>Account</h4>
-                  </PopupWrapper>
+                  Tools
                 </div>
               )}
             >
               <FontAwesomeIcon className={cx('iconPlus')} icon={faEllipsisVertical} />
-            </Tippy> */}
+            </Tippy>
           </div>
         </div>
       </header>

@@ -13,6 +13,10 @@ function Button({
   small = false,
   large = false,
   disabled = false,
+  rounded = false,
+  lightText = false,
+  leftIcon = false,
+  rightIcon = false,
   children,
   onClick,
   ...passProps
@@ -53,11 +57,17 @@ function Button({
     small,
     large,
     disabled,
+    rounded,
+    lightText,
+    leftIcon,
+    rightIcon,
     //auto = true ( active class )
   });
   return (
     <Type className={classes} {...props}>
-      <span>{children}</span>
+      {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+      <span className={cx('title-btn')}>{children}</span>
+      {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
     </Type>
   );
 }

@@ -1,4 +1,6 @@
 .wrapper {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.6rem;
   font-weight: 600;
   padding: 9px 16px;
@@ -14,13 +16,31 @@
     pointer-events: none;
     opacity: 0.5;
   }
+  .icon + .title-btn,
+  .title-btn + .icon {
+    margin-left: 8px;
+  }
 }
 
 //button type
+
+.rounded {
+  //trick button
+  border-color: rgba(22, 24, 35, 0.2);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
 .danger {
   color: var(--white);
   background-color: var(--danger);
+  border-color: var(--danger);
+
   &:hover {
+    border-color: var(--danger);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
   }
 }
@@ -29,6 +49,7 @@
   border-color: var(--danger);
   color: var(--danger);
   &:hover {
+    border-color: var(--danger);
     background-color: rgba(254, 44, 85, 0.06);
   }
 }
@@ -48,4 +69,10 @@
 .large {
   padding: 14px 16px;
   min-width: 148px;
+}
+
+//type text
+
+.lightText {
+  font-weight: 500;
 }
