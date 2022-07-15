@@ -70,7 +70,7 @@ function Header() {
     }
   };
 
-  const currentUser = true;
+  const currentUser = false;
 
   //return
   return (
@@ -107,6 +107,7 @@ function Header() {
               </button>
             </div>
           </Tippy>
+
           {/* End Search */}
           <div className={cx('actions')}>
             <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>

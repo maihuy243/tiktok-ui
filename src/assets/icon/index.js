@@ -11,4 +11,7 @@ export const icon = {
   user: require('~/assets/icon/user.svg').default,
   mess: require('~/assets/icon/mess.svg').default,
   noitication: require('~/assets/icon/noitication.svg').default,
+  home: require('~/assets/icon/home.svg').default,
+  live: require('~/assets/icon/live.svg').default,
+  follow: require('~/assets/icon/follow.svg').default,
 };

@@ -1,3 +1,12 @@
 .wrapper {
-  width: 356px;
+  width: 348px;
+  padding-top: 20px;
 }
+
+.control {
+  .control-item {
+    background-color: var(--white);
+  }
+}
+
+// color: rgba(254, 44, 85, 1.0);
