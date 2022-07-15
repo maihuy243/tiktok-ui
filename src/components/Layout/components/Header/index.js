@@ -18,7 +18,8 @@ import { images } from '~/assets/images';
 import { Popup as PopupWrapper } from '~/components/Popup';
 import AccountItem from '../../../AccountItem/AccountItem';
 import Button from '~/components/Button/button';
-import Menu from '~/components/MenuItems/menuitem';
+import Menu from '~/components/MenuItems/menu';
+
 const cx = classNames.bind(styles);
 
 //arr item menu
@@ -27,11 +28,40 @@ const MENU_ITEM = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: 'Tiếng Việt',
+    children: {
+      title: 'Ngôn Ngữ',
+      datas: [
+        {
+          title: 'Tiếng Việt',
+          code: 'VI',
+        },
+        {
+          title: 'Tiếng Anh',
+          code: 'EN',
+        },
+        {
+          title: 'Tiếng Nga',
+          code: 'RS',
+        },
+        {
+          title: 'Tiếng Kinh',
+          code: 'VIP',
+        },
+        {
+          title: 'Tiếng Ziệt',
+          code: 'VZ',
+        },
+        {
+          title: '3 QUE',
+          code: '///',
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
     title: 'Phản hồi và trợ giúp',
-    to: '/',
+    to: '/upload',
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard} />,

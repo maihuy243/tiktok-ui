@@ -18,6 +18,7 @@
   width: 100%;
   @include flex-center();
   .inner {
+    padding: 0px 24px;
     height: 100%;
     width: var(--default-layout-header-width);
     display: flex;
