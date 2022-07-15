@@ -1,0 +1,50 @@
+.control {
+  display: flex;
+  align-items: center;
+  .title-control {
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: rgba(84, 84, 84, 0.92);
+    color: rgb(255, 255, 255);
+    padding: 8px;
+  }
+  .user-control,
+  .user-control2 {
+    width: 32px;
+    background-color: var(--white);
+    margin-left: 20px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+
+  .user-control2 {
+    width: 24px;
+  }
+
+  .avatar {
+    margin-left: 20px;
+    height: 35px;
+    cursor: pointer;
+  }
+  .control-avatar {
+    max-width: 230px;
+    .item-control {
+      padding: 0px 12px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 42px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: var(--white);
+    }
+    .item-control:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+    }
+  }
+}

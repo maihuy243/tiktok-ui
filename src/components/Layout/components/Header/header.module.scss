@@ -104,10 +104,27 @@
         }
       }
     }
+
+    //action
     .actions {
       display: flex;
       align-items: center;
-      //menu
+      //menu 3 cham
+      .icon-header {
+        margin-left: 20px;
+        padding: 8px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .user-control {
+        width: 35px;
+        margin-left: 10px;
+        background-color: var(--white);
+        height: 35px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #cccc;
+      }
     }
   }
 }

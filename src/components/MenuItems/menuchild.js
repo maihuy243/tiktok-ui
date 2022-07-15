@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function MenuChildren({ title, onBack }) {
   //render
-  const renderItemMenu = () => {};
+  // const renderItemMenu = () => {};
   return (
     <>
       <header className={cx('header')}>
